@@ -1,0 +1,4 @@
+# caddy/Caddyfile.example
+croppr.example.internal {
+    reverse_proxy croppr:8000
+}
