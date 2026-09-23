@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Croppr</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Croppr</h1>
+    <p class="tagline">Crop a photo for ID Card or Arbor</p>
+  </header>
+
+  <section class="toolbar">
+    <label class="file-label">
+      Choose photo
+      <input
+        id="file-input"
+        type="file"
+        accept=".jpg,.jpeg,.png,.gif,.webp,.heic,.heif,.jxl,image/*"
+      >
+    </label>
+    <button type="button" id="start-again-btn" class="btn btn-secondary" disabled>
+      Start again
+    </button>
+  </section>
+
+  <p id="status" class="status" aria-live="polite"></p>
+  <p id="error" class="error" role="alert" hidden></p>
+
+  <main class="layout">
+    <section class="panel panel-source">
+      <h2 class="panel-title">Source</h2>
+      <div class="canvas-wrap" id="source-wrap">
+        <canvas id="source" width="480" height="480"></canvas>
+      </div>
+      <fieldset class="modes">
+        <legend>Mode</legend>
+        <label>
+          <input type="radio" name="mode" value="id" checked>
+          ID Card (3:4 → 300×400)
+        </label>
+        <label>
+          <input type="radio" name="mode" value="arbor">
+          Arbor (1:1 → 200×200)
+        </label>
+      </fieldset>
+    </section>
+
+    <section class="panel panel-preview">
+      <h2 class="panel-title">Preview</h2>
+      <div class="canvas-wrap preview-wrap">
+        <canvas id="preview" width="300" height="400"></canvas>
+      </div>
+      <button type="button" id="save-btn" class="btn btn-primary" disabled>
+        Save
+      </button>
+    </section>
+  </main>
+
+  <script src="/static/crop.js"></script>
+</body>
+</html>
