@@ -26,7 +26,9 @@ Point that hostname at the Compose network service named `croppr` (or proxy to `
 
 ## Accepted formats
 
-JPG/JPEG, PNG, GIF, WebP, HEIC/HEIF (and JXL when the optional plugin is available).
+JPG/JPEG, PNG, GIF, WebP, HEIC/HEIF, and JXL when an optional plugin is available.
+
+HEIC/HEIF needs `pillow-heif` (in `requirements.txt`) plus system `libheif1` (already installed in the Dockerfile). JPEG XL is not installed by default; uncomment `pillow-jxl-plugin` in `requirements.txt` if your platform has wheels.
 
 ## Output modes
 
